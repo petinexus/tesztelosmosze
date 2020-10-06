@@ -1,7 +1,7 @@
 
 
-/*\class asd
-*\brief majd kiderül
+/*! \class asd
+* \brief majd kiderül
 */
 
 class osztaly

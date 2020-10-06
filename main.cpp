@@ -3,7 +3,7 @@
 
 /// ez csak itt leirom
 
-/*\class valami
+/*! \class valami
 *\brief nem tudom mire való
 */
 
