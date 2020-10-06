@@ -1,5 +1,9 @@
 
 
+/*\class asd
+*\brief majd kiderül
+*/
+
 class osztaly
 {
 private:
