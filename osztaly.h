@@ -1,5 +1,5 @@
 /**
- * \class ezt irja a classnal
+ * \class ezt_irja_a_classnal
  * 
  * \ingroup ezt irja a ingroupnal
  * 
@@ -21,9 +21,11 @@
 class osztaly
 {
 private:
+    /// ez a adat nagyon fontos
     int szam;
 public:
-    osztaly(int adat);
+    /// ez a függvény nagyon fontos lenne ha
+    osztaly(int adat/**< [in] innes tagnak mi értelme */);
     void kiir();
 };
 
