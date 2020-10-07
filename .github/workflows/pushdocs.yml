@@ -19,7 +19,7 @@ jobs:
     - run: doxygen doxconf
 
     - name: Deploy 
-       uses: s0/github-pages-deploy-action@3.6.2 #JamesIves/github-pages-deploy-action@3.6.2
+       uses: JamesIves/github-pages-deploy-action@3.6.2 #JamesIves/github-pages-deploy-action@3.6.2
        with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
