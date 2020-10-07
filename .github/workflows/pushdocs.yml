@@ -18,8 +18,8 @@ jobs:
     - run: sudo apt-get install graphviz
     - run: doxygen doxconf
 
-    - name: Deploy 
-      - uses: JamesIves/github-pages-deploy-action@3.6.2 
+    name: Deploy 
+       uses: petinexus/github-pages-deploy-action@3.6.2 
        with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages 
