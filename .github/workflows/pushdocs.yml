@@ -4,6 +4,7 @@ on:
   push:	
     branches:	
       - main
+      - akt
       - gh-pages
 
 jobs:
@@ -12,7 +13,7 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest    
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@akt
     
     - run: sudo apt-get install doxygen
     - run: sudo apt-get install graphviz
