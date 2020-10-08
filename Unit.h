@@ -27,7 +27,7 @@
 
 class Unit
 {
-private:
+public:
 	const std::string b_name;  ///< A karakter neve 
 	int b_hP; ///< A karakter életereje
 	const int b_dmg; ///< A karakter támadási ereje
@@ -41,7 +41,6 @@ private:
 	std::string getName() const { return b_name; }
 	bool isDead() const;
 	friend class Game;
-protected:
 	void fight(Unit *other);
 	Unit(const std::string& name, int hP, int dmg, double acd) : b_name(name), b_hP(hP), b_dmg(dmg), b_acd(acd) {}
 	static Unit* parseUnit(const std::string& fname);
