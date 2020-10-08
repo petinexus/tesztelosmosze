@@ -23,21 +23,12 @@
 int main(int argc, char** argv)
 {
 	if (argc == 3)
-	   /*! \brief a try catch függvény
-       *
-	   *  
-	   * A try catch-ben vizsgáljuk meg a bemenő adatok megfelelőségét. 
-	   * 
-	   * \return hiba esetén a hibakóddal tér vissza
-	   * 
-       * @see nézd meg te fasz
-       */
-		try
+		try///< itt vizsgáljuk meg a bemenő adatok megfelelőségét. 
 		{
 			Game g(argv);
 			g.runGame();
 		}
-		catch(std::string e)
+		catch(std::string e)///< hiba esetén a hibakóddal tér vissza
 		{
 			std::cout << e;
 		}

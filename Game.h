@@ -5,9 +5,9 @@
  * 
  * Ez az osztály a Csata lefutását vezényeli le.
  * 
- * \author  rooooooooooooooooooooland aka GUSZTÁV, vozo, marci
+ * \author  Borbély Roland, Vitéz Marcell, Voznek Péter
  * 
- * \version 1.0
+ * \version 2.0
  * 
  * \date 2020/10/08 20:41
  * 
