@@ -14,21 +14,23 @@
  *         
  *  
  *  A main try catch-ben vizsgáljuk meg a bemenő adatok megfelelőségét. 
- *         
+ *     
+ * 
+ *	\param argc [in] argumentumok száma
+ *  \param argv [in] karaktertípusú tömb az argumentumokkal     
+ * 
  *  \return 0 lesz a visszatérési értéke, ha minden rendben lefut
  *  
- *  \param argc [in] argumentumok száma
- *  \param argv [in] karaktertípusú tömb az argumentumokkal 
  */
 int main(int argc, char** argv)
 {
 	if (argc == 3)
-		try///< itt vizsgáljuk meg a bemenő adatok megfelelőségét. 
+		try
 		{
 			Game g(argv);
 			g.runGame();
 		}
-		catch(std::string e)///< hiba esetén a hibakóddal tér vissza
+		catch(std::string e)
 		{
 			std::cout << e;
 		}

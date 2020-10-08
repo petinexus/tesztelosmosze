@@ -7,7 +7,7 @@
  * 
  * \author  Borbély Roland, Vitéz Marcell, Voznek Péter
  * 
- * \version 2.0
+ * \version 3.0
  * 
  * \date 2020/10/08 20:41
  * 

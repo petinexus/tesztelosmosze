@@ -8,7 +8,7 @@
  * 
  * \author  Borbély Roland, Vitéz Marcell, Voznek Péter
  * 
- * \version 2.0
+ * \version 3.0
  * 
  * \date 2020/10/08 20:41
  * 
@@ -27,7 +27,7 @@ private:
 	const std::string b_name;  ///< A karakter neve 
 	int b_hP; ///< A karakter életereje
 	const int b_dmg; ///< A karakter támadási ereje
-	const double b_acd; ///< A karakter támadási ideje
+	const double b_acd; ///< Karakter támadási ideje
 	/// Ez a függvény sebzést oszt ki a karakterre
 	void getHitBy(const Unit *other /** [in] ellenfél karakter Unit */ );
 	/// Ez a függvény visszaadja a karakter támadási erejét
