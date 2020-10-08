@@ -1,4 +1,4 @@
-/*!
+/**
  * \class Unit
  * 
  * \brief Unit class
