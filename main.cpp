@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 	   * 
 	   * \return hiba esetén a hibakóddal tér vissza
 	   * 
-       * @see parseUnit() 9 sor
+       * @see nézd meg te fasz
        */
 		try
 		{
