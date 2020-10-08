@@ -1,3 +1,20 @@
+/*!
+ * \class Unit
+ * 
+ * \brief Unit class
+ * 
+ * Ez az osztály a Csata lefutását vezényeli le.
+ * 
+ * \author  rooooooooooooooooooooland aka GUSZTÁV, vozo, marci
+ * 
+ * \version 1.0
+ * 
+ * \date 2020/10/08 18:56
+ * 
+ * Created on 2020/10/08 18:56
+ */
+
+
 #include <string>
 #include <iostream>
 #include <fstream>
