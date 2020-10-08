@@ -8,6 +8,8 @@
 */
 
 
+/*! \file */
+
 /*! \brief main függvény
  *         
  *  

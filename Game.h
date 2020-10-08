@@ -9,9 +9,9 @@
  * 
  * \version 1.0
  * 
- * \date 2020/10/08 18:56
+ * \date 2020/10/08 20:41
  * 
- * Created on 2020/10/08 18:56
+ * Created on 2020/10/08 20:41
  */
 
 #include "Unit.h"
@@ -21,18 +21,16 @@ class Game
 private:
     Unit *u1, *u2;
 public:
-/*! \brief Game() konstruktor
- *         
- *  
- *  Beállítja a karakterek adatait a paraméterek alapján.
- *  
- *  \param argv [in] karaktertípusú tömb az argumentumokkal  
- */
+    /*! \brief Game konstruktor
+    *         
+    *  
+    *  Beállítja a karakterek adatait a paraméterek alapján.
+    *  
+    *  \param argv [in] karaktertípusú tömb az argumentumokkal  
+    */
     Game(char** argv) : u1(Unit::parseUnit(argv[1])), u2(Unit::parseUnit(argv[2])) { }
+    /// Game osztály destruktora
     ~Game();
-/*! \brief runGame() függvény
- *      
- *  Lefutatja a játékot.
- */
+    /// A runGame függvény lefuttatja a csatát.
     void runGame();
 };
