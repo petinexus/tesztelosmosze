@@ -23,13 +23,13 @@
 class Unit
 {
 private:
-	const std::string b_name;  //!< A karakter neve 
-	int b_hP; //!< A karakter életereje
-	const int b_dmg; //!< A karakter támadási ereje
-	const double b_acd; //!< A karakter támadási ideje
-	//! getHitBy() függvény sebzést oszt ki a karakterre
-	void getHitBy(const Unit *other /*! [in] ellenfél karakter Unit */ );
-	//! getDmg()
+	const std::string b_name;  ///< A karakter neve 
+	int b_hP; ///< A karakter életereje
+	const int b_dmg; ///< A karakter támadási ereje
+	const double b_acd; ///< A karakter támadási ideje
+	/// getHitBy() függvény sebzést oszt ki a karakterre
+	void getHitBy(const Unit *other /** [in] ellenfél karakter Unit */ );
+	/// getDmg() függvény
 	int getDmg() const { return b_dmg; }
 	double getAcd() const { return b_acd; } 
 	int getHP() const { return b_hP; }
