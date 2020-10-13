@@ -11,6 +11,6 @@ jobs:
       - name: Build
         run: g++ -std=c++17 *.cpp
       - name: Run test
-        run: chmod +x ./run_test.sh
+        run: ./run_test.sh
       - name: Diff
         run: diff output.txt units/good_output.txt
