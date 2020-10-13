@@ -2,24 +2,23 @@ name: outputtest workflow
 
 on:
   push
-
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install
-        run: sudo apt-get install -y valgrind cppcheck
-      - name: Cppcheck
-        run: cppcheck *.cpp --enable=warning --error-exitcode=1
-      - name: Upload CPPCheck report
-        run: cppcheck *.cpp --enable=all --output-file=cppreport.txt
-      - uses: actions/upload-artifact@v2
+      - name: Install dependencies
+        run: sudo apt-get install -y valgrind && sudo apt-get install -y cppcheck
+      - name: CPPCheck Static Code Analysis
+        run: cppcheck --enable=all ./*.cpp 2> cppcheck_report.txt && cat cppcheck_report.txt && if grep -q "(warning)" "./cppcheck_report.txt"; then exit 1; fi && if grep -q "(error)" "./cppcheck_report.txt"; then exit 1; fi
+      - name: Upload CPPCheck report as artifact
+        uses: actions/upload-artifact@v2
         with:
-          path: ./cppreport.txt
+          name: cppcheck_report
+          path: cppcheck_report.txt
       - name: Build
-        run: g++ -Wall -Werror -std=c++17 *.cpp
-      - name: Memory check
+        run: g++ -Wall -Werror -std=c++17 *.cpp 
+      - name: Valgrind memory check
         run: valgrind --error-exitcode=1 ./a.out
       - name: Run test
         run: ./run_test.sh
