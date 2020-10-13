@@ -8,8 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install
+        run: sudo apt-get install cppcheck
+        run: sudo apt-get install valgrind
+      - name: Cppcheck
+        run: cppcheck *.cpp --enable=warning --error-exitcode=1
+      - name: Upload CPPCheck report
+        run: cppcheck *.cpp --enable=all --output-file=cppreport.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ./cppreport.txt
       - name: Build
-        run: g++ -std=c++17 *.cpp
+        run: g++ -Wall -Werror -std=c++17 *.cpp
+      - name: Memory check
+        run: valgrind --error-exitcode=1 ./a.out
       - name: Run test
         run: ./run_test.sh
       - name: Diff
