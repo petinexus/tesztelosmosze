@@ -36,7 +36,6 @@ public:
 	*  \param acd [in] karakter támadási ideje
  	*/
 	Unit(const std::string& name, int hP, int dmg, double acd) : b_name(name), b_hP(hP), b_dmg(dmg), b_acd(acd), b_maxHp(hP), b_xp(0), b_level(1) {}
-	~Unit(){delete this;}
 	/// Ez a függvény a .json file parse-olja.
 	static Unit* parseUnit(const std::string& fname/** [in] elérési út */);
 	int getHP() const { return b_hP; }
