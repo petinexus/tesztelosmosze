@@ -47,7 +47,7 @@ private:
 	int b_xp; 
 	int b_level;
 	/// Ez a függvény sebzést oszt ki a karakterre.
-	void getHitBy(const Unit *other /** [in] ellenfél karakter Unit */ );
+	void getHitBy(Unit *other /** [in] ellenfél karakter Unit */ );
 	/// Ez a függvény visszaadja a karakter támadási erejét.
 	int getDmg() const { return b_dmg; }
 	/// Ez a függvény visszaadja a karakter támadási idejét.
