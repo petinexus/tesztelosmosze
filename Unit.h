@@ -36,7 +36,7 @@ public:
 	*  \param acd [in] karakter támadási ideje
  	*/
 	Unit(const std::string& name, int hP, int dmg, double acd) : b_name(name), b_hP(hP), b_dmg(dmg), b_acd(acd), b_maxHp(hP), b_xp(0), b_level(1) {}
-	~Unit(){delete last; delete this;}
+	~Unit(){delete this;}
 	/// Ez a függvény a .json file parse-olja.
 	static Unit* parseUnit(const std::string& fname/** [in] elérési út */);
 	int getHP() const { return b_hP; }
@@ -44,7 +44,6 @@ public:
 	std::string getName() const { return b_name; }
 	/// Ez a függvény visszaadja a karakter meghalt-e.
 private:
-	Unit* last;
 	const std::string b_name;  ///< A karakter neve. 
 	int b_hP; ///< A karakter életereje.
 	int b_dmg; ///< A karakter támadási ereje.
