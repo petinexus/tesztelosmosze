@@ -4,6 +4,7 @@ Unit* Unit::parseUnit(const std::string& fname){
 	std::string name;
 	int hp, dmg;
 	double acd;
+
 	std::ifstream file;  
 	file.open(fname);
     if (file.fail()) throw fname + " does not exist.";
@@ -36,34 +37,51 @@ Unit* Unit::parseUnit(const std::string& fname){
     }
 }
 
-void Unit::getHitBy(const Unit *other) {
-	if (b_hP - other->getDmg() > 0)
+void Unit::levelup(){
+	while (b_xp >= 100){		
+		b_maxHp = round((b_maxHp*1.1));
+		b_hP = b_maxHp;
+		b_dmg *= 1.1;
+		b_xp -= 100;
+		b_level++;
+		b_acd *= 0.9;
+	}
+}
+
+void Unit::getHitBy(Unit *other) {
+	if (b_hP - other->getDmg() > 0) {
+		other->b_xp += other->getDmg();
 		b_hP -= other->getDmg();
-	else b_hP = 0;
+	}
+	else { 
+		other->b_xp += b_hP;
+		b_hP = 0;
+	}
+	other->levelup();
 }
 
 bool Unit::isDead() const {
 	return b_hP == 0;
 }
 
-void Unit::fight(Unit *other) {
+Unit* Unit::fight(Unit *other) {
 	other->getHitBy(this);
 	if(other->isDead())
-		std::cout << this->getName() << " wins." << " Remaining hp: "<< this->getHP()<<".";
+		return this;
 
 	this->getHitBy(other);
-    if (this->isDead())
-    	std::cout << other->getName() << " wins." << " Remaining hp: "<< other->getHP() <<".";
+    	if (this->isDead())
+    		return other;
 
 	double acdthis = this->getAcd();
 	double acdother = other->getAcd();
-	Unit* last = other;
+	Unit *last = other;
 
 	while(!this->isDead() && !other->isDead())
 	{
 		if(acdthis == acdother)
 		{
-			if (last->getName() == this->getName())
+			if (last == this)
 			{
 				other->getHitBy(this);
 				if(!other->isDead())
@@ -97,5 +115,5 @@ void Unit::fight(Unit *other) {
 			last = other;
 		}		
 	}
-	std::cout << last->getName() << " wins." << " Remaining hp: "<< last->getHP()<<".";
+	return last;
 }

@@ -7,7 +7,6 @@
 		- Voznek Peter
 */
 
-
 /*! \file */
 
 /*! \brief main függvény
@@ -36,7 +35,6 @@ int main(int argc, char** argv)
 		}
 	else
 		std::cout << "Incorrect number of parameters!";
-
 	return 0;
 }
 
