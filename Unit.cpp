@@ -70,8 +70,8 @@ void Unit::fight(Unit *other) {
 		std::cout << this->getName() << " wins." << " Remaining hp: "<< this->getHP()<<".";
 
 	this->getHitBy(other);
-    if (this->isDead())
-    	std::cout << other->getName() << " wins." << " Remaining hp: "<< other->getHP() <<".";
+	if (this->isDead())
+    		std::cout << other->getName() << " wins." << " Remaining hp: "<< other->getHP() <<".";
 
 	double acdthis = this->getAcd();
 	double acdother = other->getAcd();
