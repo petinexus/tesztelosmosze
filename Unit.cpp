@@ -64,14 +64,14 @@ bool Unit::isDead() const {
 	return b_hP == 0;
 }
 
-void Unit::fight(Unit *other) {
+Unit* Unit::fight(Unit *other) {
 	other->getHitBy(this);
 	if(other->isDead())
-		std::cout << this->getName() << " wins." << " Remaining hp: "<< this->getHP()<<".";
+		return this;
 
 	this->getHitBy(other);
-	if (this->isDead())
-    		std::cout << other->getName() << " wins." << " Remaining hp: "<< other->getHP() <<".";
+    if (this->isDead())
+    	return other;
 
 	double acdthis = this->getAcd();
 	double acdother = other->getAcd();
@@ -81,7 +81,7 @@ void Unit::fight(Unit *other) {
 	{
 		if(acdthis == acdother)
 		{
-			if (last->getName() == this->getName())
+			if (last == this)
 			{
 				other->getHitBy(this);
 				if(!other->isDead())
@@ -115,5 +115,5 @@ void Unit::fight(Unit *other) {
 			last = other;
 		}		
 	}
-	std::cout << last->getName() << " wins." << " Remaining hp: "<< last->getHP()<<".";
+	return last;
 }
