@@ -75,7 +75,7 @@ Unit* Unit::fight(Unit *other) {
 
 	double acdthis = this->getAcd();
 	double acdother = other->getAcd();
-	Unit* last = other;
+	last = other;
 
 	while(!this->isDead() && !other->isDead())
 	{
