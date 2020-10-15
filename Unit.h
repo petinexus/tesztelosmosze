@@ -38,28 +38,28 @@ public:
 	Unit(const std::string& name, int hP, int dmg, double acd) : b_name(name), b_hP(hP), b_dmg(dmg), b_acd(acd), b_maxHp(hP), b_xp(0), b_level(1) {}
 	/// Ez a függvény a .json file parse-olja.
 	static Unit* parseUnit(const std::string& fname/** [in] elérési út */);
+	/// Ez a függvény visszaadja a karakter életerejét.
 	int getHP() const { return b_hP; }
 	/// Ez a függvény visszaadja a karakter nevét.
 	std::string getName() const { return b_name; }
-	/// Ez a függvény visszaadja a karakter meghalt-e.
+	
 private:
 	const std::string b_name;  ///< A karakter neve. 
 	int b_hP; ///< A karakter életereje.
 	int b_dmg; ///< A karakter támadási ereje.
 	double b_acd; ///< Karakter támadási ideje.
-	int b_maxHp;
-	int b_xp; 
-	int b_level;
+	int b_maxHp; ///< Karakter maximális életereje.
+	int b_xp; ///< Karakter fejlődési pontja.
+	int b_level; ///< Karakter szintje.
 	/// Ez a függvény sebzést oszt ki a karakterre.
 	void getHitBy(Unit *other /** [in] ellenfél karakter Unit */ );
 	/// Ez a függvény visszaadja a karakter támadási erejét.
 	int getDmg() const { return b_dmg; }
 	/// Ez a függvény visszaadja a karakter támadási idejét.
 	double getAcd() const { return b_acd; } 
-	/// Ez a függvény visszaadja a karakter életerejét.
-	
+	/// Ez a függvény visszaadja a karakter meghalt-e.
 	bool isDead() const;
+	/// Ez a függvény felel a szintlépésekért.
 	void levelup();
-	int getXp() const { return b_xp; }
-	int getLevel() const {return b_level; }
+
 };
