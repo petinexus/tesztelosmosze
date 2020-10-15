@@ -51,6 +51,8 @@ private:
 	int b_maxHp; ///< Karakter maximális életereje.
 	int b_xp; ///< Karakter fejlődési pontja.
 	int b_level; ///< Karakter szintje.
+
+	
 	/// Ez a függvény sebzést oszt ki a karakterre.
 	void getHitBy(Unit *other /** [in] ellenfél karakter Unit */ );
 	/// Ez a függvény visszaadja a karakter támadási erejét.
