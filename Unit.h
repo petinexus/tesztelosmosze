@@ -63,5 +63,8 @@ private:
 	bool isDead() const;
 	/// Ez a függvény felel a szintlépésekért.
 	void levelup();
+	
+	/// ez egy másik teszt függvény:)
+	void ezBizonyEgyTeszt();
 
 };
