@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sze_2dmosze_2d2020_2dvodor',['SZE-MOSZE-2020-Vodor',['../autotoc_md0.html',1,'']]]
+  ['parseunit',['parseUnit',['../classUnit.html#a5d21491e291c31124162f2b0b686bf0a',1,'Unit']]]
 ];
