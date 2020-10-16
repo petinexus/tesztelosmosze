@@ -56,7 +56,9 @@ private:
 	int getDmg() const { return b_dmg; }
 	/// Ez a függvény visszaadja a karakter támadási idejét.
 	double getAcd() const { return b_acd; } 
-	/// Ez a függvény visszaadja a karakter életerejét.
+	
+	/// Ez egy teszt függvény
+	void ezEgyTeszt();
 	
 	bool isDead() const;
 	void levelup();
