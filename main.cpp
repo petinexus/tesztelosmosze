@@ -24,7 +24,7 @@ const std::map<int,std::string> error_messages = {
 
 void bad_exit(int exitcode){
     std::cerr 
-        << (error_messages.count(exitcode) ? error_messages[exitcode] : "Unknown error")
+        << (error_messages.count(exitcode) ? error_messages.at(exitcode) : "Unknown error")
         << std::endl;
     exit(exitcode);
 }
@@ -37,7 +37,7 @@ int main(int argc, char** argv){
     std::list<std::string> monster_files;
     try {
         auto scenario = JSON::parseFromFile(argv[1]);
-        if (!(scenario.count("hero")&&scenario.count("monsters"))) bad_exit(3)
+        if (!(scenario.count("hero")&&scenario.count("monsters"))) bad_exit(3);
         else {
             hero_file=scenario["hero"];
             std::istringstream monsters(scenario["monsters"]);
@@ -62,7 +62,7 @@ int main(int argc, char** argv){
             hero.fightTilDeath(monsters.front());
             if (!monsters.front().isAlive()) monsters.pop_front();
         }
-        std::cout << hero.isAlive() ? "The hero won." : "The hero died." << std::endl;
+        std::cout << (hero.isAlive() ? "The hero won."  : "The hero died.") << std::endl;
     } catch (const JSON::ParseException& e) bad_exit(4);
     return 0;
 }
