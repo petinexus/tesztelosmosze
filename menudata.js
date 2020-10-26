@@ -9,7 +9,4 @@ var menudata={children:[
 {text:"Függvények",url:"functions_func.html"},
 {text:"Változók",url:"functions_vars.html"}]}]},
 {text:"Fájl",url:"files.html",children:[
-{text:"Fájllista",url:"files.html"},
-{text:"Fájlelemek",url:"globals.html",children:[
-{text:"Összes",url:"globals.html"},
-{text:"Függvények",url:"globals_func.html"}]}]}]}
+{text:"Fájllista",url:"files.html"}]}]}
