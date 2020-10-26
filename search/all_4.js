@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isdead',['isDead',['../classUnit.html#afd7aa5f7719cba4d967bb7f009582d2f',1,'Unit']]]
+  ['levelup',['levelup',['../classUnit.html#a636da52d3b6e1281823f9c02d9ea9bc7',1,'Unit']]]
 ];
