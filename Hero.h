@@ -1,7 +1,7 @@
 /*!
- * \class Unit
+ * \class Hero
  * 
- * \brief Unit class
+ * \brief Hero class
  * 
  * A karakterekért felelős osztály.
  * 
@@ -17,7 +17,7 @@
 
 
 #include <string>
-#include "Parser.h"
+#include "JSON.h"
 
 class Unit
 {
