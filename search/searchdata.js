@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "bfgilprsu~",
-  1: "gpu",
-  2: "fgilpru~",
+  0: "bfghilpsu",
+  1: "hpu",
+  2: "fgilpu",
   3: "b",
   4: "s"
 };

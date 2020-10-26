@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['parser',['Parser',['../classParser.html',1,'']]],
-  ['parseunit',['parseUnit',['../classUnit.html#a5d21491e291c31124162f2b0b686bf0a',1,'Unit']]]
+  ['levelup',['levelup',['../classUnit.html#a636da52d3b6e1281823f9c02d9ea9bc7',1,'Unit']]]
 ];

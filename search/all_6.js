@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rungame',['runGame',['../classGame.html#abc9436a9d18e48c6e1e4fbc4ea879449',1,'Game']]]
+  ['parser',['Parser',['../classParser.html',1,'']]],
+  ['parseunit',['parseUnit',['../classUnit.html#a5d21491e291c31124162f2b0b686bf0a',1,'Unit']]]
 ];
