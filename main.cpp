@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <iostream>
 
 /*
 	Szechenyi Istvan Egyetem - MOSZE 2020 - Vodor
@@ -6,6 +7,7 @@
 		- Vitez Marcell
 		- Voznek Peter
 */
+
 
 /*! \file */
 
@@ -35,6 +37,7 @@ int main(int argc, char** argv)
 		}
 	else
 		std::cout << "Incorrect number of parameters!";
+
 	return 0;
 }
 
