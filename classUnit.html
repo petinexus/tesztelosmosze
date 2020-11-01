@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SZE-MOSZE-2020-Vodor
-   &#160;<span id="projectnumber">3.2</span>
+   &#160;<span id="projectnumber">3.1</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,11 @@ $(function() {
 <div class="title">Unit osztályreferencia</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classUnit.html" title="Unit class. ">Unit</a> class.  
+ <a href="classUnit.html#details">Részletek...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Unit_8h_source.html">Unit.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Publikus tagfüggvények</h2></td></tr>
@@ -76,11 +81,10 @@ Publikus tagfüggvények</h2></td></tr>
 <tr class="memdesc:a2c16c4abf1509f8779e3885d1f9b7d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fight függvény levezényli a csatát és a végén kiírja a győztest.  <a href="#a2c16c4abf1509f8779e3885d1f9b7d5f">Részletek...</a><br /></td></tr>
 <tr class="separator:a2c16c4abf1509f8779e3885d1f9b7d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76efe1141793613b11cf7db5edde807f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a76efe1141793613b11cf7db5edde807f">Unit</a> (const std::string &amp;name, int hP, int dmg, double acd)</td></tr>
-<tr class="memdesc:a76efe1141793613b11cf7db5edde807f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classUnit.html">Unit</a> konstruktor.  <a href="#a76efe1141793613b11cf7db5edde807f">Részletek...</a><br /></td></tr>
+<tr class="memdesc:a76efe1141793613b11cf7db5edde807f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classUnit.html" title="Unit class. ">Unit</a> konstruktor.  <a href="#a76efe1141793613b11cf7db5edde807f">Részletek...</a><br /></td></tr>
 <tr class="separator:a76efe1141793613b11cf7db5edde807f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7e562f19574b4c2869236cfed08ba9b"><td class="memItemLeft" align="right" valign="top"><a id="ac7e562f19574b4c2869236cfed08ba9b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#ac7e562f19574b4c2869236cfed08ba9b">getHP</a> () const</td></tr>
-<tr class="memdesc:ac7e562f19574b4c2869236cfed08ba9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény visszaadja a karakter életerejét. <br /></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getHP</b> () const</td></tr>
 <tr class="separator:ac7e562f19574b4c2869236cfed08ba9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0497994e384db5c080ec78e9b645fa40"><td class="memItemLeft" align="right" valign="top"><a id="a0497994e384db5c080ec78e9b645fa40"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a0497994e384db5c080ec78e9b645fa40">getName</a> () const</td></tr>
@@ -95,10 +99,6 @@ Statikus publikus tagfüggvények</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Privát tagfüggvények</h2></td></tr>
-<tr class="memitem:a636da52d3b6e1281823f9c02d9ea9bc7"><td class="memItemLeft" align="right" valign="top"><a id="a636da52d3b6e1281823f9c02d9ea9bc7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a636da52d3b6e1281823f9c02d9ea9bc7">levelup</a> ()</td></tr>
-<tr class="memdesc:a636da52d3b6e1281823f9c02d9ea9bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény ellenőrzi/végzi a szintlépést. <br /></td></tr>
-<tr class="separator:a636da52d3b6e1281823f9c02d9ea9bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf7790cbe22a8c37b2ff9ea63ed880ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#acf7790cbe22a8c37b2ff9ea63ed880ba">getHitBy</a> (<a class="el" href="classUnit.html">Unit</a> *other)</td></tr>
 <tr class="memdesc:acf7790cbe22a8c37b2ff9ea63ed880ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény sebzést oszt ki a karakterre.  <a href="#acf7790cbe22a8c37b2ff9ea63ed880ba">Részletek...</a><br /></td></tr>
 <tr class="separator:acf7790cbe22a8c37b2ff9ea63ed880ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,16 +110,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a39b4fbf9da60cff8ddbb98e0471a495d">getAcd</a> () const</td></tr>
 <tr class="memdesc:a39b4fbf9da60cff8ddbb98e0471a495d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény visszaadja a karakter támadási idejét. <br /></td></tr>
 <tr class="separator:a39b4fbf9da60cff8ddbb98e0471a495d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb962ee57ecb96b79bd527fee6505e8"><td class="memItemLeft" align="right" valign="top"><a id="aefb962ee57ecb96b79bd527fee6505e8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#aefb962ee57ecb96b79bd527fee6505e8">ezEgyTeszt</a> ()</td></tr>
+<tr class="memdesc:aefb962ee57ecb96b79bd527fee6505e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez egy teszt függvény. <br /></td></tr>
+<tr class="separator:aefb962ee57ecb96b79bd527fee6505e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd7aa5f7719cba4d967bb7f009582d2f"><td class="memItemLeft" align="right" valign="top"><a id="afd7aa5f7719cba4d967bb7f009582d2f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#afd7aa5f7719cba4d967bb7f009582d2f">isDead</a> () const</td></tr>
-<tr class="memdesc:afd7aa5f7719cba4d967bb7f009582d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény visszaadja a karakter meghalt-e. <br /></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDead</b> () const</td></tr>
 <tr class="separator:afd7aa5f7719cba4d967bb7f009582d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636da52d3b6e1281823f9c02d9ea9bc7"><td class="memItemLeft" align="right" valign="top"><a id="a636da52d3b6e1281823f9c02d9ea9bc7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>levelup</b> ()</td></tr>
+<tr class="separator:a636da52d3b6e1281823f9c02d9ea9bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49682b027acb6bba0a6106b5db1a5f8d"><td class="memItemLeft" align="right" valign="top"><a id="a49682b027acb6bba0a6106b5db1a5f8d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getXp</b> () const</td></tr>
+<tr class="separator:a49682b027acb6bba0a6106b5db1a5f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa721b96f8ec650e1db628378f63c3d72"><td class="memItemLeft" align="right" valign="top"><a id="aa721b96f8ec650e1db628378f63c3d72"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> () const</td></tr>
+<tr class="separator:aa721b96f8ec650e1db628378f63c3d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Privát attribútumok</h2></td></tr>
-<tr class="memitem:afedc97662a40a6e5397e5efcd321d5e1"><td class="memItemLeft" align="right" valign="top"><a id="afedc97662a40a6e5397e5efcd321d5e1"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#afedc97662a40a6e5397e5efcd321d5e1">b_name</a></td></tr>
-<tr class="memdesc:afedc97662a40a6e5397e5efcd321d5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A karakter neve. <br /></td></tr>
+<tr class="memitem:afedc97662a40a6e5397e5efcd321d5e1"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#afedc97662a40a6e5397e5efcd321d5e1">b_name</a></td></tr>
+<tr class="memdesc:afedc97662a40a6e5397e5efcd321d5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ez a függvény visszaadja a karakter meghalt-e.  <a href="#afedc97662a40a6e5397e5efcd321d5e1">Részletek...</a><br /></td></tr>
 <tr class="separator:afedc97662a40a6e5397e5efcd321d5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b204ff195f0597886c846a302c248e4"><td class="memItemLeft" align="right" valign="top"><a id="a3b204ff195f0597886c846a302c248e4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a3b204ff195f0597886c846a302c248e4">b_hP</a></td></tr>
@@ -134,19 +145,23 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:a65bb4162b503a1f6434f2ab01dfb6164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Karakter támadási ideje. <br /></td></tr>
 <tr class="separator:a65bb4162b503a1f6434f2ab01dfb6164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8163d19ce96c9bcd351547edeac9c468"><td class="memItemLeft" align="right" valign="top"><a id="a8163d19ce96c9bcd351547edeac9c468"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a8163d19ce96c9bcd351547edeac9c468">b_maxHp</a></td></tr>
-<tr class="memdesc:a8163d19ce96c9bcd351547edeac9c468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Karakter maximális életereje. <br /></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>b_maxHp</b></td></tr>
 <tr class="separator:a8163d19ce96c9bcd351547edeac9c468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46fff84d3c321c90788c238d993c91d5"><td class="memItemLeft" align="right" valign="top"><a id="a46fff84d3c321c90788c238d993c91d5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#a46fff84d3c321c90788c238d993c91d5">b_xp</a></td></tr>
-<tr class="memdesc:a46fff84d3c321c90788c238d993c91d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Karakter fejlődési pont. <br /></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>b_xp</b></td></tr>
 <tr class="separator:a46fff84d3c321c90788c238d993c91d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abedb4d21bc83a1501fdc749b489807e7"><td class="memItemLeft" align="right" valign="top"><a id="abedb4d21bc83a1501fdc749b489807e7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnit.html#abedb4d21bc83a1501fdc749b489807e7">b_level</a></td></tr>
-<tr class="memdesc:abedb4d21bc83a1501fdc749b489807e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Karakter szintje. <br /></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>b_level</b></td></tr>
 <tr class="separator:abedb4d21bc83a1501fdc749b489807e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Konstruktorok és destruktorok dokumentációja</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p><a class="el" href="classUnit.html" title="Unit class. ">Unit</a> class. </p>
+<p>A karakterekért felelős osztály.</p>
+<dl class="section author"><dt>Szerző</dt><dd>Borbély Roland, Vitéz Marcell, Voznek Péter</dd></dl>
+<dl class="section version"><dt>Verzió</dt><dd>3.1</dd></dl>
+<dl class="section date"><dt>Dátum</dt><dd>2020/10/08 20:41</dd></dl>
+<p>Created on 2020/10/08 20:41 </p>
+</div><h2 class="groupheader">Konstruktorok és destruktorok dokumentációja</h2>
 <a id="a76efe1141793613b11cf7db5edde807f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76efe1141793613b11cf7db5edde807f">&#9670;&nbsp;</a></span>Unit()</h2>
 
@@ -193,7 +208,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classUnit.html">Unit</a> konstruktor. </p>
+<p><a class="el" href="classUnit.html" title="Unit class. ">Unit</a> konstruktor. </p>
 <p>Beállítja a karakterek adatait a paraméterek alapján.</p>
 <dl class="params"><dt>Paraméterek</dt><dd>
   <table class="params">
@@ -227,7 +242,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>A fight függvény levezényli a csatát és a végén kiírja a győztest. </p>
 <dl class="params"><dt>Paraméterek</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>ellenfél karakter <a class="el" href="classUnit.html">Unit</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>ellenfél karakter <a class="el" href="classUnit.html" title="Unit class. ">Unit</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -261,7 +276,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Ez a függvény sebzést oszt ki a karakterre. </p>
 <dl class="params"><dt>Paraméterek</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>ellenfél karakter <a class="el" href="classUnit.html">Unit</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>ellenfél karakter <a class="el" href="classUnit.html" title="Unit class. ">Unit</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,9 +317,35 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
+<h2 class="groupheader">Adattagok dokumentációja</h2>
+<a id="afedc97662a40a6e5397e5efcd321d5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afedc97662a40a6e5397e5efcd321d5e1">&#9670;&nbsp;</a></span>b_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Unit::b_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ez a függvény visszaadja a karakter meghalt-e. </p>
+<p>A karakter neve. </p>
+
+</div>
+</div>
 <hr/>Ez a dokumentáció az osztályról a következő fájlok alapján készült:<ul>
-<li><a class="el" href="Hero_8h_source.html">Hero.h</a></li>
-<li>Hero.cpp</li>
+<li><a class="el" href="Unit_8h_source.html">Unit.h</a></li>
+<li>asd.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

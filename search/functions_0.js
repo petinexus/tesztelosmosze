@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fight',['fight',['../classUnit.html#a2c16c4abf1509f8779e3885d1f9b7d5f',1,'Unit']]]
+  ['ezegyteszt',['ezEgyTeszt',['../classUnit.html#aefb962ee57ecb96b79bd527fee6505e8',1,'Unit']]]
 ];
