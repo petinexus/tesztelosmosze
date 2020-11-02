@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rungame',['runGame',['../classGame.html#abc9436a9d18e48c6e1e4fbc4ea879449',1,'Game']]]
+  ['isalive',['isAlive',['../classUnit.html#ad9245732ec5afbdb44b9942ae8ea98cc',1,'Unit']]]
 ];

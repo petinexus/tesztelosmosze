@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sze_2dmosze_2d2020_2dvodor',['SZE-MOSZE-2020-Vodor',['../autotoc_md0.html',1,'']]]
+  ['json',['JSON',['../classJSON.html',1,'JSON'],['../classJSON.html#a120b85f22a07e06f4eb0a882c0d8c731',1,'JSON::JSON()']]]
 ];
