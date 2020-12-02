@@ -75,4 +75,35 @@ public:
     void getHitBy(Unit* other);
 };
 
+/*!
+ * \class MarkedMap
+ * 
+ * \brief MarkedMap class
+ * 
+ * A MarkedMap konstruktura beolvas egy térképet egy adott fájból amiben előre megtalálhatóak a Hős és a szörnyek pozíciói
+ * 
+ * 
+ * \author  Borbély Roland, Vitéz Marcell, Voznek Péter
+ * 
+ * \version 4.0
+ * 
+ * \date 2020/11/17 18:39
+ * 
+ * Created on 2020/11/17 18:39
+ */
+
+class MarkedMap : public Hero
+{
+    public:
+    
+    /// MarkedMap konstruktor 
+    MarkedMap(const std::string& filename /** [in] a fájl elérési útvonala*/);
+
+    /// MarkedMap default konstruktor 
+    MarkedMap(){}
+   
+    std::pair<int,int> getHeroPosition() const; ///< Visszaadja a Hős pozícióját
+    std::vector<std::pair<int,int>> getMonsterPositions(char c) const; ///< Visszaadja a kért Monster pozícióját
+};
+
 #endif
