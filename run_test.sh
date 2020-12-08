@@ -1,9 +1,5 @@
-#!/bin/bash
-
-if test -f output.txt
-then
-    rm output.txt
-fi
-
-cat test/scn1.txt | ./runGame scenarios/scenario1.json >> output.txt
-cat test/scn5.txt | ./runGame scenarios/scenario5.json >> output.txt
+#!/usr/bin/env bash
+git clone --depth 1 "$1" temp-linecount-repo &&
+  printf "('temp-linecount-repo' will be deleted automatically)\n\n\n" &&
+  cloc temp-linecount-repo &&
+  rm -rf temp-linecount-repo
