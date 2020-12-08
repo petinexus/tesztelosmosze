@@ -1,25 +1,23 @@
-name: generatedoxygen
+name: Generate Doxygen
 
 on:
   push:	
     branches:	
-      - main
+      - master
 
 jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest   
+    container: rolandborbely/doxygen-image:latest 
     steps:
-    - uses: actions/checkout@main
-    
-    - run: sudo apt-get install doxygen
-    - run: sudo apt-get install graphviz
-    - run: doxygen doxconf
-
+    - uses: actions/checkout@v2
+    - name: Run doxygen
+      run: make doc
     - name: Push git subdirectory as branch
       uses: s0/git-publish-subdir-action@v2.4.0
-
+    
       env:
         REPO: self
         BRANCH: gh-pages

@@ -3,9 +3,13 @@ cmake_minimum_required(VERSION 2.6)
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
  
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Link runTests with what we want to test 
 # and the GTest and pthread library
-add_library(codeToTest ../Parser.cpp)
-add_executable(parserTest parser_test.cpp)
+add_library(codeToTest ../JSON.cpp ../Hero.cpp ../Monster.cpp ../Map.cpp ../Game.cpp)
+add_executable(unitTest unittests.cpp)
 
-target_link_libraries(parserTest ${GTEST_LIBRARIES} pthread codeToTest)
+target_link_libraries(unitTest ${GTEST_LIBRARIES} pthread codeToTest)

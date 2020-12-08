@@ -1,62 +1,83 @@
 #include "JSON.h"
+#include <cctype>
+#include <fstream>
+#include <regex>
 
-const std::map <std::string, std::string> Parser::parseFromString(std::string inputString){
-    static const std::regex parseRegex("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\w\\.]*)\"?\\s*[,}]\\s*");
+const JSON JSON::parseFromString(std::string inputString){
+    static const std::regex parseRegex("\\s*\"([\\w-]*)\"\\s*:\\s*\"?([\\s\\w\\.-\\/]*)\"?\\s*[,}]\\s*");
+    static const std::regex regexForList("\\s*\"([\\w]*)\"\\s*:\\s*\"?\\[?\\s*([\\w\\.\"?,?\\s*]*)\"?\\s*[,\\]}]");
     std::smatch matches;
-    std::map<std::string,std::string> attributes;
+    std::smatch matchList;
+    jsonData attributes;
     std::string errMsg;
+    std::string value;
+    int pos;
     if (inputString.substr(0,1) != "{"){
         errMsg = "Error in file: missing { from the top.";
-        throw errMsg; 
+        throw ParseException(errMsg); 
     }
     else if (inputString.substr(inputString.size()-1, 1) != "}"){
         errMsg = "Error in file: missing } from the bottom.";
-        throw errMsg; 
+        throw ParseException(errMsg); 
     }
 
     while(std::regex_search(inputString, matches, parseRegex)){
         if (matches[1] == "") {
             errMsg = "Error in file: incorrect key.";
-            throw errMsg; 
+            throw ParseException(errMsg); 
         }
 
         else if (matches[2] == "") {
             errMsg = "Error in file: incorrect value.";
-            throw errMsg; 
+            throw ParseException(errMsg); 
         }
 
         else
         {
-            attributes[matches[1]] = matches[2];
-            inputString = matches.suffix().str();
+            value = matches[2];
+
+            if (!value.empty() && std::all_of(value.begin(), value.end(), [](char c){return std::isdigit(c);})) attributes[matches[1]] = std::stoi(value);
+            else if (!value.empty() && std::all_of(value.begin(), value.end(), [](char c){return ((std::isdigit(c) || c == '.') ? true : false);})) attributes[matches[1]] = std::stod(value);
+            else attributes[matches[1]] = value;
+            pos = inputString.find(matches.str());
+            inputString.erase(pos, matches.str().length());
         }            
     }
-        return attributes;
+    while(std::regex_search(inputString, matchList, regexForList)){
+        value = matchList[2];
+        while (value.find(",")!=std::string::npos)
+            value.erase(value.find(","),1);
+            
+        while(value.find("\"")!= std::string::npos)
+            value.erase(value.find("\""),1);
+
+        attributes[matchList[1]]=value;
+        inputString = matchList.suffix().str();
+    }
+    return JSON(attributes);
 }
 
 
-const std::map <std::string, std::string> Parser::parseJson(const std::string& json) {
+const JSON JSON::parseFromFile(const std::string& json) {
     std::smatch matches;
-    std::map<std::string,std::string> attributes;
 
     static const std::regex fileNameRegex("([\\w]*).json$");
     if (std::regex_search(json, matches, fileNameRegex))
     {
         std::ifstream jsonFile;
         jsonFile.open(json);
-        if (jsonFile.fail()) throw json + " does not exist!";
+        if (jsonFile.fail()) throw ParseException(json + " does not exist!");
         else
         {
-           attributes = parseJson(jsonFile);
+           jsonData toReturn = parseJson(jsonFile).b_data;
            jsonFile.close();
-           return attributes;
+           return JSON(toReturn);
         }
     }
     else return parseFromString(json);
-    
 }
 
-const std::map <std::string, std::string> Parser::parseJson(std::istream& jsonFile) {
+const JSON JSON::parseJson(std::istream& jsonFile) {
     std::string jsonLine;
     std::string json = ""; 
 
@@ -64,4 +85,9 @@ const std::map <std::string, std::string> Parser::parseJson(std::istream& jsonFi
         json += jsonLine;
 
     return parseFromString(json);
+}
+
+const int JSON::count(const std::string& key){
+    if (b_data.find(key) != b_data.end()) return 1;
+    else return 0;
 }
