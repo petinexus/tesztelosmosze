@@ -1,10 +1,17 @@
 #include "JSON.h"
+#include <cctype>
+#include <fstream>
+#include <regex>
 
 const JSON JSON::parseFromString(std::string inputString){
-    static const std::regex parseRegex("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\s\\w\\.]*)\"?\\s*[,}]\\s*");
+    static const std::regex parseRegex("\\s*\"([\\w-]*)\"\\s*:\\s*\"?([\\s\\w\\.-\\/]*)\"?\\s*[,}]\\s*");
+    static const std::regex regexForList("\\s*\"([\\w]*)\"\\s*:\\s*\"?\\[?\\s*([\\w\\.\"?,?\\s*]*)\"?\\s*[,\\]}]");
     std::smatch matches;
-    std::map<std::string,std::string> attributes;
+    std::smatch matchList;
+    jsonData attributes;
     std::string errMsg;
+    std::string value;
+    int pos;
     if (inputString.substr(0,1) != "{"){
         errMsg = "Error in file: missing { from the top.";
         throw ParseException(errMsg); 
@@ -27,11 +34,27 @@ const JSON JSON::parseFromString(std::string inputString){
 
         else
         {
-            attributes[matches[1]] = matches[2];
-            inputString = matches.suffix().str();
+            value = matches[2];
+
+            if (!value.empty() && std::all_of(value.begin(), value.end(), [](char c){return std::isdigit(c);})) attributes[matches[1]] = std::stoi(value);
+            else if (!value.empty() && std::all_of(value.begin(), value.end(), [](char c){return ((std::isdigit(c) || c == '.') ? true : false);})) attributes[matches[1]] = std::stod(value);
+            else attributes[matches[1]] = value;
+            pos = inputString.find(matches.str());
+            inputString.erase(pos, matches.str().length());
         }            
     }
-        return JSON(attributes);
+    while(std::regex_search(inputString, matchList, regexForList)){
+        value = matchList[2];
+        while (value.find(",")!=std::string::npos)
+            value.erase(value.find(","),1);
+            
+        while(value.find("\"")!= std::string::npos)
+            value.erase(value.find("\""),1);
+
+        attributes[matchList[1]]=value;
+        inputString = matchList.suffix().str();
+    }
+    return JSON(attributes);
 }
 
 
@@ -46,13 +69,12 @@ const JSON JSON::parseFromFile(const std::string& json) {
         if (jsonFile.fail()) throw ParseException(json + " does not exist!");
         else
         {
-           std::map<std::string, std::string> toReturn = parseJson(jsonFile).data;
+           jsonData toReturn = parseJson(jsonFile).b_data;
            jsonFile.close();
            return JSON(toReturn);
         }
     }
     else return parseFromString(json);
-    
 }
 
 const JSON JSON::parseJson(std::istream& jsonFile) {
@@ -66,6 +88,6 @@ const JSON JSON::parseJson(std::istream& jsonFile) {
 }
 
 const int JSON::count(const std::string& key){
-    if (data.find(key) != data.end()) return 1;
+    if (b_data.find(key) != b_data.end()) return 1;
     else return 0;
 }

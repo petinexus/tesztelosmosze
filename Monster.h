@@ -1,6 +1,10 @@
 #ifndef MONSTER_H
 #define MONSTER_H
 
+#include "Unit.h"
+#include "Hero.h"
+#include <string>
+
 /*!
  * \class Monster
  * 
@@ -11,22 +15,19 @@
  * 
  * \author  Borbély Roland, Vitéz Marcell, Voznek Péter
  * 
- * \version 4.0
+ * \version 5.0
  * 
  * \date 2020/11/02 13:22
  * 
  * Created on 2020/11/02 13:22
  */
 
-#include "Unit.h"
-#include "Hero.h"
-
 class Hero;
 
 class Monster : public Unit{
 public:
 
-    /*! \brief Monster konstruktor
+	/*! \brief Monster konstruktor
  	*         
  	*  
  	*  Beállítja a Szörny adatait a paraméterek alapján.
@@ -35,12 +36,14 @@ public:
 	*  \param hp [in] Szörny életereje
 	*  \param dmg [in] Szörny támadási ereje
 	*  \param acd [in] Szörny támadási ideje
+	*  \param defense [in] Szörny védelme
+	*  \param texture [in] Szörny textúrája
  	*/
-    Monster(std::string name, int hp, int dmg, double acd) : Unit(name, hp, dmg, acd){}
-    /// Ez a függvény a .json file parse-olja. 
+   	Monster(const std::string& name, int hp, Damage dmg, double acd, int defense, const std::string& texture) : Unit(name, hp, dmg, acd, defense, texture){}
+    /// Ez a függvény parse-olja a megadott JSON formátumú fájlt. 
 	static Monster parse(const std::string& fname/** [in] elérési út */);
     /// Ez a függvény megüti a Szörnyet.
-    void getHitBy(Hero* other);
+    void getHitBy(Hero* other/** [in] ellenfél karakter */);
 };
 
 #endif

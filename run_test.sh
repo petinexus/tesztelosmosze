@@ -5,6 +5,5 @@ then
     rm output.txt
 fi
 
-for file in test/scenarios/*.json; do
-    ./runGame $file >> output.txt
-done
+cat test/scn1.txt | ./runGame scenarios/scenario1.json >> output.txt
+cat test/scn5.txt | ./runGame scenarios/scenario5.json >> output.txt
