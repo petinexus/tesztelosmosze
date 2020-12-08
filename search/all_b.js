@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sze_2dmosze_2d2020_2dvodor',['SZE-MOSZE-2020-Vodor',['../autotoc_md0.html',1,'']]]
+  ['notinitializedexception_72',['NotInitializedException',['../classGame_1_1NotInitializedException.html',1,'Game::NotInitializedException'],['../classGame_1_1NotInitializedException.html#ad64f074698a8c85cbc5ee046aa8a971b',1,'Game::NotInitializedException::NotInitializedException()']]]
 ];

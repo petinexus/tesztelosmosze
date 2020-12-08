@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['markedmap',['MarkedMap',['../classMarkedMap.html',1,'']]],
-  ['monster',['Monster',['../classMonster.html',1,'']]]
+  ['charactersvgrenderer_116',['CharacterSVGRenderer',['../classCharacterSVGRenderer.html',1,'']]]
 ];
